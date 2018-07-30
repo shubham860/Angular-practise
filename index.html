@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
      <!-- Bootstrap-3,Bootstrap-4,angularjs cdn-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="icon" href="assets\images\favicon.png" type="image/gif" sizes="16x16">
@@ -25,12 +26,26 @@
       <div class="mx-auto">
         <div class="container" id="control">
          <div class="jumbotron" id="jumbo">
-             <h1 class="display-1" style="text-align:center;">TO DO LIST</h1>
+             <h1 class="display-4" style="text-align:center;color:black;">THINGS TO DO</h1>
              <hr />
                 <div ng-app="todo" ng-controller="ctrl">
+                <div>
                   <ul>
-                    <li ng-repeat="x in item">{{x}}</li>
+                    <li ng-repeat="x in item">{{x}}<span ng-click="removeitem($index)">&times;</span></li>
                   </ul>
+                </div>
+                  <div class="row">
+                    <div class="container mt-3">
+                      <div class="input-group mb-3">
+                          <input type="text" ng-model="newitem" class="form-control" placeholder="Enter task......." >
+                          <div class="input-group-append">
+                            <button ng-click="additem()" class="btn btn-default" type="submit" id="btn">ADD</button>
+                          </div>
+                          <p>{{errortext}}</p>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
                </div>
          </div>
       </div>
