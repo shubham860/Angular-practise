@@ -1,0 +1,30 @@
+body{
+     height: 100%;
+     background-size: cover;
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     font-family: 'Montserrat', sans-serif;
+     margin-top:50px;
+     color: #293d3d;
+    }
+
+
+    @media (min-width: 378px )  {
+      body{
+        background-image: url('..\\images\\back1.jpg');
+      }
+    }
+
+
+    @media (max-width: 378px){
+      body{
+        background-image: url('..\\images\\back2.jpg');
+      }
+   }
+
+
+#jumbo{
+  height:auto;
+  width: auto;
+  margin: 100px; 
+}
