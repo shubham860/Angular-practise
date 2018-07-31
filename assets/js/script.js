@@ -1,5 +1,5 @@
 var app = angular.module("todo",[]);
-app.controller("ctrl",function($scope){
+app.controller("ctrl",function($scope, $interval){
      $scope.item = [];
      $scope.additem = function(){
        $scope.errortext = "";
@@ -21,6 +21,15 @@ app.controller("ctrl",function($scope){
   $scope.myFunc = function() {
       $scope.showMe = !$scope.showMe;
     }
+
+      $scope.date = new Date();
+
+      $scope.time = new Date().toLocaleTimeString();
+
+      $scope.theTime = new Date().toLocaleTimeString();
+      $interval(function () {
+          $scope.theTime = new Date().toLocaleTimeString();
+      }, 1000);
 });
 
 

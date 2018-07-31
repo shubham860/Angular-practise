@@ -27,16 +27,17 @@
     <div class="container">
       <div class="mx-auto">
         <div class="container" id="control">
-         <div class="jumbotron" id="jumbo">
+         <div class="jumbotron" id="jumbo"  ng-app="todo" ng-controller="ctrl">
              <h1 class="display-4" style="text-align:center;color:black;">THINGS TO DO</h1>
+             <h1 style="text-align:center;color:black;">{{date}}/{{theTime}}</h1>
              <hr />
-                <div ng-app="todo" ng-controller="ctrl">
-
+                <div>
                 <div style="overflow-x:hidden;overflow-y:scroll;height:190px;">
                   <table>
                      <tr ng-repeat="x in item | filter:filtering">
-                         <td width="90%"><h3><b>{{ x }}</b></h3></td>
-                         <td width="10%"><button type="button" ng-click="removeitem($index)" class="btn btn-default" id="btn1"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button></td>
+                         <td width="75%"><h3><b>{{ x }}</b></h3></td>
+                         <td width="20%"><p style="font-size:18px;margin:auto;text-align:center;"><b>{{ time }}</b></p></td>
+                         <td width="5%"><button type="button" ng-click="removeitem($index)" class="btn btn-default" id="btn1"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button></td>
                         </tr>
                      </table>
                 </div>
@@ -61,9 +62,9 @@
 
                       </div>
                     </div>
-
-
                   </div>
+
+
                </div>
          </div>
       </div>
