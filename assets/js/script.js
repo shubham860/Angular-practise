@@ -16,4 +16,17 @@ app.controller("ctrl",function($scope){
         $scope.errortext = "";
          $scope.item.splice(x,1);
      }
+
+      $scope.showMe = false;
+  $scope.myFunc = function() {
+      $scope.showMe = !$scope.showMe;
+    }
+});
+
+
+
+$("#ip1").keypress(function(e){
+  if(e.which == 13) {
+        additem();
+    }
 });

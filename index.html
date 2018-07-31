@@ -20,6 +20,8 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Icons -->
+    <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
   </head>
   <body>
     <div class="container">
@@ -29,28 +31,44 @@
              <h1 class="display-4" style="text-align:center;color:black;">THINGS TO DO</h1>
              <hr />
                 <div ng-app="todo" ng-controller="ctrl">
-                <div>
-                  <ul>
-                    <li ng-repeat="x in item">{{x}}<span ng-click="removeitem($index)">&times;</span></li>
-                  </ul>
+
+                <div style="overflow-x:hidden;overflow-y:scroll;height:190px;">
+                  <table>
+                     <tr ng-repeat="x in item | filter:filtering">
+                         <td width="90%"><h3><b>{{ x }}</b></h3></td>
+                         <td width="10%"><button type="button" ng-click="removeitem($index)" class="btn btn-default" id="btn1"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button></td>
+                        </tr>
+                     </table>
                 </div>
+
+
                   <div class="row">
                     <div class="container mt-3">
                       <div class="input-group mb-3">
-                          <input type="text" ng-model="newitem" class="form-control" placeholder="Enter task......." >
+                          <input type="text" ng-model="newitem" class="form-control" placeholder="Enter task......." id="ip1">
                           <div class="input-group-append">
                             <button ng-click="additem()" class="btn btn-default" type="submit" id="btn">ADD</button>
                           </div>
                           <p>{{errortext}}</p>
                        </div>
+
+                       <div class="input-group mb-3">
+                           <input type="text" ng-model="filtering" class="form-control" placeholder="Filter" id="ip1" ng-show="showMe">
+                           <div class="input-group-append">
+                             <button ng-click="myFunc()" class="btn btn-default" type="submit" id="btn">FILTER</button>
+                           </div>
+                        </div>
+
                       </div>
                     </div>
+
+
                   </div>
                </div>
          </div>
       </div>
     </div>
   </div>
-   <script type="text/javascript" src="assets/js/script.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>

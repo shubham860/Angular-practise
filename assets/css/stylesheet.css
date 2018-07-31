@@ -4,14 +4,19 @@ body{
      background-repeat: no-repeat;
      background-attachment: fixed;
      font-family: 'Cinzel', serif;
-     margin-top:50px;
-     color: #293d3d;
+     margin-top:100px;
+     overflow-y: hidden;
+     overflow-x: hidden;
     }
 
 
     @media (min-width: 1025px )  {
       body{
         background-image: url('..\\images\\back1.jpg');
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
       #control{
         width:600px;
@@ -22,6 +27,10 @@ body{
     @media (max-width: 1025px){
       body{
         background-image: url('..\\images\\back1.2.jpg');
+        max-height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
       }
    }
 
@@ -58,4 +67,47 @@ input[type="text"]:focus{
   font-size: 25px;
   background-color: black;
   color:white;
+}
+
+#btn1{
+   height: 50px;
+   font-size: 25px;
+   background-color: white;
+}
+
+#btn1:focus{
+  outline:none;
+  background-color: white;
+    -webkit-box-shadow: inset 0 0 0px 9999px white;
+}
+
+table{
+  max-width: 100%;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px white;
+    border-radius: 0px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background:  black;
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background :  white;
+}
+
+::-webkit-scrollbar:hover {
+    width: 10px;
+    background-color: black;
 }
