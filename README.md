@@ -1,2 +1,2 @@
 # Angular-practise
-shopping list application by Angularjs
+To-do list application by Angularjs
