@@ -1,3 +1,5 @@
+AOS.init();
+
 var app = angular.module("todo",[]);
 app.controller("ctrl",function($scope, $interval){
      $scope.item = [];
@@ -9,7 +11,7 @@ app.controller("ctrl",function($scope, $interval){
                $scope.item.push($scope.newitem);
                $scope.newitem="";
            } else {
-               $scope.errortext = "The item is already in your shopping list.";
+               $scope.errortext = "WARNING : This item is already exist.";
            }
        }
      $scope.removeitem = function(x){
@@ -36,6 +38,5 @@ app.controller("ctrl",function($scope, $interval){
 
 $("#ip1").keypress(function(e){
   if(e.which == 13) {
-        additem();
-    }
+        
 });

@@ -21,6 +21,17 @@ body{
       #control{
         width:600px;
       }
+      #jumbo{
+        z-index: -10;
+        border-top: 60px solid #86592d;
+        border-bottom:10px solid #86592d;
+        border-right:10px solid #86592d;
+        border-left:10px solid #86592d;
+        border-radius:10px;
+      }
+      #top{
+        margin-top:-50px;
+      }
     }
 
 
@@ -39,10 +50,13 @@ body{
       input[type="text"] {
         font-size: 18px;
       }
+      #top{
+        margin-top:-88px;
+      }
    }
 
 #jumbo{
-  height:630px;
+  height:650px;
   width: auto;
   background-color: white;
 }
