@@ -14,6 +14,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="icon" href="assets\images\favicon.png" type="image/gif" sizes="16x16">
     <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/stylesheet.css">
@@ -23,7 +24,7 @@
     <!-- Icons -->
     <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
   </head>
-  <body>
+  <body onload="day()">
     <div class="container" id="top">
       <div class="mx-auto">
         <div class="container" id="control">
@@ -33,7 +34,7 @@
                 <h4 style="text-align:center;color:black;"><b>{{date | date:'dd-MM-yyyy'}}</b></h4>
               </div>
               <div class="col-md-4">
-                 
+                 <h4 style="text-align:center;color:black;"><b  id="show"></b></h4>
               </div>
               <div class="col-md-4">
                 <h4 style="text-align:center;color:black;"><b>{{theTime}}</b></h4>
@@ -43,10 +44,10 @@
              <h1 class="display-4" style="text-align:center;color:black;">THINGS TO DO</h1>
              <hr />
                 <div>
-                <div style="overflow-x:hidden;overflow-y:scroll;height:190px;">
+                <div style="overflow-x:scroll;overflow-y:scroll;height:190px;">
                   <table>
                      <tr ng-repeat="x in item | filter:filtering">
-                         <td width="73%"><h3><b>{{ x }}</b></h3></td>
+                         <td width="73%"><h5><b>{{ x }}</b></h5></td>
                          <td width="24%"><p style="font-size:18px;margin:auto;text-align:center;"><b>{{ time }}</b></p></td>
                          <td width="3%"><button type="button" ng-click="removeitem($index)" class="btn btn-default" id="btn1"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button></td>
                         </tr>
@@ -68,10 +69,6 @@
                            <div class="input-group-append">
                              <button ng-click="myFunc()" class="btn btn-default" type="submit" id="btn">FILTER</button>
                            </div>
-                        </div>
-
-                        <div>
-                          <p style="font-size:16px;"><b>{{errortext}}</b></p>
                         </div>
 
                       </div>
