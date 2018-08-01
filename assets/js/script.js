@@ -32,11 +32,5 @@ app.controller("ctrl",function($scope, $interval){
       $interval(function () {
           $scope.theTime = new Date().toLocaleTimeString();
       }, 1000);
-});
 
-
-
-$("#ip1").keypress(function(e){
-  if(e.which == 13) {
-        
 });

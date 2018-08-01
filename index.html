@@ -33,7 +33,7 @@
                 <h4 style="text-align:center;color:black;"><b>{{date | date:'dd-MM-yyyy'}}</b></h4>
               </div>
               <div class="col-md-4">
-
+                 
               </div>
               <div class="col-md-4">
                 <h4 style="text-align:center;color:black;"><b>{{theTime}}</b></h4>
@@ -45,7 +45,7 @@
                 <div>
                 <div style="overflow-x:hidden;overflow-y:scroll;height:190px;">
                   <table>
-                     <tr ng-repeat="x in item | filter:filtering" data-aos="zoom-in-up">
+                     <tr ng-repeat="x in item | filter:filtering">
                          <td width="73%"><h3><b>{{ x }}</b></h3></td>
                          <td width="24%"><p style="font-size:18px;margin:auto;text-align:center;"><b>{{ time }}</b></p></td>
                          <td width="3%"><button type="button" ng-click="removeitem($index)" class="btn btn-default" id="btn1"><ion-icon ios="ios-trash" md="md-trash"></ion-icon></button></td>
@@ -64,21 +64,19 @@
                        </div>
 
                        <div class="input-group mb-3">
-                           <input type="text" ng-model="filtering" class="form-control" placeholder="Filter" id="ip2" ng-show="showMe">
+                           <input type="text" ng-model="filtering" class="form-control" placeholder="Filter" id="ip2" ng-show="showMe" autocomplete="off" />
                            <div class="input-group-append">
                              <button ng-click="myFunc()" class="btn btn-default" type="submit" id="btn">FILTER</button>
                            </div>
                         </div>
 
                         <div>
-                          <p style="font-size:16px;" data-aos="zoom-in-right"><b>{{errortext}}</b></p>
+                          <p style="font-size:16px;"><b>{{errortext}}</b></p>
                         </div>
 
                       </div>
                     </div>
                   </div>
-
-
                </div>
          </div>
       </div>
